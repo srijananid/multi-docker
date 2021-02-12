@@ -1,5 +1,5 @@
 sudo: required
-	language: generic
+language: generic
 
 services:
   - docker
@@ -8,7 +8,7 @@ before_install:
   - docker build -t srijananid/client-test -f ./client/Dockerfile.dev ./client
 
 script:
-	- docker run -e CI=true stephengrider/react-test npm test
+  - docker run -e CI=true stephengrider/react-test npm test
 
 after_install:
   - docker build -t srijananid/multi-client ./client
